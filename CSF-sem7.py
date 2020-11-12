@@ -1,17 +1,12 @@
+csf = {
+    "cw-weight" : 0.4,
+    "cw-mark" : 90,
+    "exam-weight" : 0.6,
+    "exam-mark" : 75
+}
 
-Marks = dict()
-Marks["CSF"] = int(input("CSF: "))
-Marks["FunPro"] = int(input("FunPro: "))
-Marks["WebDesign"] = int(input("WebDesign: "))
+def final():
+    final_mark = csf.get("cw-weight", 0) * csf.get("cw-mark", 0) + csf.get("exam-weight", 0) * csf.get("exam-mark", 0)
+    return final_mark
 
-def calculate(d):
-    all_marks = d.values()
-    total = sum(all_marks)
-    average = total/len(d)
-    return average
-
-print(calculate(Marks))
-
-
-
-
+print(final())
